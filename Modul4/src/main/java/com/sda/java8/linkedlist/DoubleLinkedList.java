@@ -34,6 +34,12 @@ public class DoubleLinkedList {
             return;
         }
 
+        if (head.getValue() == value && head.getNextElement() == null) {
+            head = null;
+            tail = null;
+            return;
+        }
+
         // If the first element is the value to remove, move the head to the next element.
         if (head.getValue() == value) {
             head = head.getNextElement();

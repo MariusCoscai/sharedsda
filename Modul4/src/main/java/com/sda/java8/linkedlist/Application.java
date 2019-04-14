@@ -8,25 +8,25 @@ public class Application {
         DoubleLinkedNode node4 = new DoubleLinkedNode(30);
 
         DoubleLinkedList list = new DoubleLinkedList();
-        list.add(node1);
-        list.add(node2);
+//        list.add(node1);
+//        list.add(node2);
         list.add(node3);
-        list.add(node4);
+//        list.add(node4);
 
-        System.out.println("Elements: " + list.print());
-        System.out.println("Elements: " + list.printReverse());
-        list.remove(40);
-        System.out.println("Elements: " + list.print());
-        System.out.println("Elements: " + list.printReverse());
-        list.remove(30);
-        System.out.println("Elements: " + list.print());
-        System.out.println("Elements: " + list.printReverse());
+//        System.out.println("Elements: " + list.print());
+//        System.out.println("Elements: " + list.printReverse());
+//        list.remove(40);
+//        System.out.println("Elements: " + list.print());
+//        System.out.println("Elements: " + list.printReverse());
+//        list.remove(30);
+//        System.out.println("Elements: " + list.print());
+//        System.out.println("Elements: " + list.printReverse());
 //        list.remove(20);
 //        System.out.println("Elements: " + list.print());
 //        System.out.println("Elements: " + list.printReverse());
-//        list.remove(50);
-//        System.out.println("Elements: " + list.print());
-//        System.out.println("Elements: " + list.printReverse());
+        list.remove(50);
+        System.out.println("Elements: " + list.print());
+        System.out.println("Elements: " + list.printReverse());
 
 
         // singleLinkedList();
