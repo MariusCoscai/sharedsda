@@ -1,0 +1,71 @@
+Starters
+1) Write a method which checks if a given person is an adult. Think about the method signature and then implement and run it for a few values.
+2) Write a program which draws a Christmas tree from the '*' sign, i.e. isosceles triangle over a rectangle.
+3) You have an array of integers, list:
+  a) all the integers one after another
+  b) all the integers backwards
+  c) all the odd integers
+  d) all integers divisible by 3
+  e) the sum of all the integers
+  f) the sum of the first four integers
+  g) the sum of the last 5 integers bigger than 2
+  h) how many numbers there are from the beginning of the array so that their sum is bigger than 10
+
+--------------------------------------------------------------------------------
+Linked List
+1. We went online for shopping a new phone. While looking through the options we want to store our preferences sorted by price.
+Use an updated the single linked list which keeps the elements sorted by price. Hint: changes in add().
+Test input: 500 240 300 800 1600. On print() output: 240 300 500 800 1600.
+Extra challenge: print the list also in descending order: use an updated double linked list.
+
+2. We go to a party, with our new phone, and meet a lot of people. Because we are not particularly good at remembering names, note down all the persons names in the order you meet them.
+Create a class Person having fields first_name and last_name. Use a single linked list for storing persons names.
+Test input: "Albert Einstein", "Stephen Hawking", "Isaac Newton", "Charles Darwin", "Nikola Tesla". Use print() to display in the same order as the input.
+
+3. The next day, a friend asks you how many people were at the party.
+Add a counter to the linked list, update it for each add/remove and provide the value via a getter getSize().
+Rerun the above input and print the size. Output: 5.
+
+4. While you were counting the people, you realise you met Nikola before Charles. Swap the places.
+Create a method with the following signature: void swap(int first_position, int second_position). Counting positions starts from 0.
+Test by calling swap(3, 4) and then print(). Nikola should be printed before Charles.
+
+5. Annoyed by the fact you forgot the order, you decide you don't need so many information and you want to cap the list to MAX_SIZE = 3.
+Rerun the above input and don't allow more than 3 elements in the list. Print the list and the size. Output size: 3.
+
+6. The friend asks you if there was also "Francis Bacon" at the party.
+Create a search() function and reply to your friend the correct answer. Check also for "Stephen Hawking".
+
+7. Since you know how many persons you want to remember in a day, optimize your memory access by converting the linked list to an array [].
+Inside the linked list, create a method with the following signature: Persons[] toArray().
+
+--------------------------------------------------------------------------------
+Binary Search Tree (BST)
+1. Fix the current implementation of the BST: check the add() method, use the debugger and try to add the same element twice.
+To test if it works, insert 10K nodes and try to print: you should get a print of some of the nodes followed by StackOverflowError arround 6K.
+
+2. Search for a given value and return true if found, false otherwise.
+Test input: 40, 50, 30, 20, 35, 32. Output: search(15): false; search(32): true;
+
+3. Display the min and the max values of a tree. Create functions int getMin() and int getMax().
+You need to navigate the tree properly for each case. Output for the above input: min: 20, max: 50.
+
+4. The implemented traversal during the course was called "in-order" traversal, which is a type of Depth First Search (DFS).
+Implement also the preOrder() and postOrder() traversal methods.
+Observations: in-order gives us the sorted values, pre-order allows us to copy the tree, post-order can be used for the tree deletion.
+More details: https://www.geeksforgeeks.org/dfs-traversal-of-a-tree-using-recursion/
+
+5. Remove a given value, return true if removed, false if not found.
+This has more cases to consider. Check: https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/
+Remove 30 and print. Output: 32 becomes the parent of 20 and 35.
+
+6. Advanced: implement the BFS (breadth first search) print, also known as level traversal.
+In the current implementation of print() we have a DFS, where the D is from depth, as in we display the tree from bottom-up.
+The BFS is printing the tree level by level, first the root, then the first childrens and so on.
+One way of achieving this is using a queue can be used: we push the childrens to the queue and then process the next element in the queue.
+More details in: https://www.geeksforgeeks.org/level-order-tree-traversal/
+
+--------------------------------------------------------------------------------
+Extra exercises:
+- http://users.csc.calpoly.edu/~jdalbey/103/Demo/LinkedListExercises/
+- http://www.cs.princeton.edu/courses/archive/spr01/cs126/exercises/bst.html
