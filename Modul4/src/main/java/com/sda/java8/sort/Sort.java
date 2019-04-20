@@ -15,4 +15,13 @@ public class Sort {
             }
         } while (executat);
     }
+
+    public static void mergeSort(int[] array) {
+        mergeSortRecursive(array, 0, array.length - 1);
+    }
+
+    private static void mergeSortRecursive(int[] array, int start, int end) {
+        
+    }
+
 }

@@ -12,6 +12,21 @@ import java.util.Scanner;
 public class Application {
     public static void main(String[] args) {
 
+        int[] myArray = {2, 4, 3};
+        int[] myArray2 = {6, 5, 3, 1, 8, 7, 2, 4};
+
+        Sort.mergeSort(myArray);
+
+        printArray(myArray);
+
+//        sortRandomNumbers();
+//        bubbleSort();
+//        binarySearchTreeUsage();
+//        doubleLinkedList();
+//        singleLinkedList();
+    }
+
+    private static void sortRandomNumbers() {
         // Generate n random numbers, print, sort, print
         // read n from console
         // call generateMethod
@@ -28,11 +43,6 @@ public class Application {
 
         Sort.bubbleSort(myArray);
         printArray(myArray);
-
-//        bubbleSort();
-//        binarySearchTreeUsage();
-//        doubleLinkedList();
-//        singleLinkedList();
     }
 
     private static int[] generate(int n) {
