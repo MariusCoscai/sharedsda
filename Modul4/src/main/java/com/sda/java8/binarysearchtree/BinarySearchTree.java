@@ -1,4 +1,4 @@
-package com.sda.java8.linkedlist.binarysearchtree;
+package com.sda.java8.binarysearchtree;
 
 public class BinarySearchTree {
     private TreeNode root;
@@ -34,20 +34,49 @@ public class BinarySearchTree {
                 currentNode.setLeft(newNode);
                 newNode.setParent(currentNode);
                 return;  // Stops the loop and the method once we add the node
+            } else {
+                System.out.println("Key already present: " + key);
+                return;
             }
         }
     }
 
-    public void print() {
-        print(root);
+    public void printInOrder() {
+        printInOrder(root);
         System.out.println();
     }
 
-    private void print(TreeNode node) {
+    private void printInOrder(TreeNode node) {
         if (node != null) {
-            print(node.getLeft());
+            printInOrder(node.getLeft());
             System.out.print(node.getKey() + " ");
-            print(node.getRight());
+            printInOrder(node.getRight());
+        }
+    }
+
+    public void printPreOrder() {
+        printPreOrder(root);
+        System.out.println();
+    }
+
+    private void printPreOrder(TreeNode node) {
+        if (node != null) {
+            System.out.print(node.getKey() + " ");
+            printPreOrder(node.getLeft());
+            printPreOrder(node.getRight());
+        }
+    }
+
+    public void printPostOrder() {
+        printPreOrder(root);
+        System.out.println();
+    }
+
+    private void printPostOrder(TreeNode node) {
+        if (node != null) {
+            printPostOrder(node.getLeft());
+            printPostOrder(node.getRight());
+            System.out.print(node.getKey() + " ");
         }
     }
 

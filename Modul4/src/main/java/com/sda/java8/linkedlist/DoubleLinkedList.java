@@ -5,7 +5,7 @@ public class DoubleLinkedList {
     private DoubleLinkedNode tail;
 
     // Adds new node to the list
-    void add(DoubleLinkedNode node) {
+    public void add(DoubleLinkedNode node) {
         if (head == null) {
             head = node;
             tail = node;
@@ -17,7 +17,7 @@ public class DoubleLinkedList {
         tail = node;
     }
 
-    void remove(int value) {
+    public void remove(int value) {
         // Example: remove last element if list contains only 2 values
 //        if (head.getNextElement().getNextElement() == null) {
 //            head.setNextElement(null);
@@ -72,7 +72,7 @@ public class DoubleLinkedList {
     }
 
     // Displays all element values of the list separated by space
-    String print() {
+    public String print() {
         // Hint: same procedure of passing through the elements
         StringBuilder builder = new StringBuilder();
         for (DoubleLinkedNode nodCurent = head; nodCurent != null;
@@ -84,7 +84,7 @@ public class DoubleLinkedList {
     }
 
     // Displays all element values of the list separated by space, in reverse order
-    String printReverse() {
+    public String printReverse() {
         StringBuilder builder = new StringBuilder();
         for (DoubleLinkedNode nodCurent = tail; nodCurent != null;
              nodCurent = nodCurent.getPreviousElement()) {

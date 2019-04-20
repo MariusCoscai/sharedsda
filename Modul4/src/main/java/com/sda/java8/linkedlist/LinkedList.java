@@ -4,7 +4,7 @@ public class LinkedList {
     private Node head;
 
     // Adds new node to the list
-    void add(Node node) {
+    public void add(Node node) {
         if (head == null) {
             head = node;
             return;
@@ -22,7 +22,7 @@ public class LinkedList {
         parcurge.setNextElement(node);
     }
 
-    void remove(int value) {
+    public void remove(int value) {
         // Example: remove last element if list contains only 2 values
 //        if (head.getNextElement().getNextElement() == null) {
 //            head.setNextElement(null);
@@ -62,7 +62,7 @@ public class LinkedList {
     }
 
     // Displays all element values of the list separated by space
-    String print() {
+    public String print() {
         // Hint: same procedure of passing through the elements
         StringBuilder builder = new StringBuilder();
         for (Node nodCurent = head; nodCurent != null;

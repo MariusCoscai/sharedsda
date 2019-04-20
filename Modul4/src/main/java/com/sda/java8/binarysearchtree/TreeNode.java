@@ -1,4 +1,4 @@
-package com.sda.java8.linkedlist.binarysearchtree;
+package com.sda.java8.binarysearchtree;
 
 public class TreeNode {
     private final int key;

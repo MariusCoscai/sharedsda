@@ -1,24 +1,73 @@
-package com.sda.java8.linkedlist;
+package com.sda.java8;
 
-import com.sda.java8.linkedlist.binarysearchtree.BinarySearchTree;
+import com.sda.java8.binarysearchtree.BinarySearchTree;
+import com.sda.java8.linkedlist.DoubleLinkedList;
+import com.sda.java8.linkedlist.DoubleLinkedNode;
+import com.sda.java8.linkedlist.LinkedList;
+import com.sda.java8.linkedlist.Node;
+import com.sda.java8.sort.Sort;
 
 public class Application {
     public static void main(String[] args) {
 
-        BinarySearchTree bst = new BinarySearchTree();
-//        bst.add(40);
-//        bst.add(50);
-//        bst.add(30);
-//        bst.add(20);
-//        bst.add(35);
-//        bst.add(32);
-        for(int i=0; i< 1000; i++) {
-            bst.add(i);
-        }
+        // Generate n random numbers, print, sort, print
+        // read n from console
+        // call generateMethod
+        // call print
+        // call sort
+        // call print
 
-        bst.print();
+        int[] myArray = generate();
+
+//        bubbleSort();
+//        binarySearchTreeUsage();
 //        doubleLinkedList();
 //        singleLinkedList();
+    }
+
+    private static int[] generate() {
+        int[] array = new int[100];
+        // for each element = random();
+        return array;
+    }
+
+    private static void bubbleSort() {
+        int[] myArray = {2, 4, 3};
+        int[] myArray2 = {6, 5, 3, 1, 8, 7, 2, 4};
+
+        Sort.bubbleSort(myArray);
+        Sort.bubbleSort(myArray2);
+
+        printArray(myArray);
+        printArray(myArray2);
+    }
+
+    private static void printArray(int[] array) {
+        for(int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    private static void binarySearchTreeUsage() {
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.add(40);
+        bst.add(50);
+        bst.add(30);
+        bst.add(20);
+        bst.add(35);
+        bst.add(32);
+
+
+//        for(int i=0; i< 10000; i++) {
+//            bst.add(i);
+//        }
+
+        bst.printInOrder();
+        System.out.println();
+        bst.printPreOrder();
+        System.out.println();
+        bst.printPostOrder();
     }
 
     private static void doubleLinkedList() {
