@@ -30,10 +30,45 @@ public class Sort {
     }
 
     private static void merge(int[] array, int start, int middle, int end) {
-        for (int i = start; i <= end; i++) {
+        int leftLength = middle - start + 1;
+        int rightLength = end - middle;
+        int[] leftArray = new int[leftLength];
+        int[] rightArray = new int[rightLength];
+
+        for (int i = 0; i < leftArray.length; i++) {
+            leftArray[i] = array[start + i];
+        }
+        for (int j = 0; j < rightArray.length; j++) {
+            rightArray[j] = array[middle + j + 1];
+        }
+
+        int i = 0;
+        int j = 0;
+        for (int k = start; k <= end; k++) {
+            if (leftArray[i] <= rightArray[j]) {
+                array[k] = leftArray[i++];
+                if (i == leftLength) {
+                    // Am ajuns la capat cu left, finalizam cu elemente din right
+                    while (++k <= end) {
+                        array[k] = rightArray[j++];
+                    }
+                }
+            } else {
+                array[k] = rightArray[j++];
+                if (j == rightLength) {
+                    // Am ajuns la capat cu right, finalizam cu elemente din left
+                    while (++k <= end) {
+                        array[k] = leftArray[i++];
+                    }
+                }
+            }
+        }
+
+        for (i = start; i <= end; i++) {
             System.out.print(array[i] + " ");
         }
         System.out.println();
+
     }
 
 }
