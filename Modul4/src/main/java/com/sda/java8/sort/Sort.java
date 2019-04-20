@@ -21,7 +21,19 @@ public class Sort {
     }
 
     private static void mergeSortRecursive(int[] array, int start, int end) {
-        
+        if (start < end) {
+            int middle = (start + end) / 2;
+            mergeSortRecursive(array, start, middle);
+            mergeSortRecursive(array, middle + 1, end);
+            merge(array, start, middle, end);
+        }
+    }
+
+    private static void merge(int[] array, int start, int middle, int end) {
+        for (int i = start; i <= end; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
     }
 
 }
