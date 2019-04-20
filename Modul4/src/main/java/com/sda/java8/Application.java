@@ -7,6 +7,8 @@ import com.sda.java8.linkedlist.LinkedList;
 import com.sda.java8.linkedlist.Node;
 import com.sda.java8.sort.Sort;
 
+import java.util.Scanner;
+
 public class Application {
     public static void main(String[] args) {
 
@@ -17,7 +19,15 @@ public class Application {
         // call sort
         // call print
 
-        int[] myArray = generate();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduceti numarul de elemente: ");
+        int n = scanner.nextInt();
+
+        int[] myArray = generate(n);
+        printArray(myArray);
+
+        Sort.bubbleSort(myArray);
+        printArray(myArray);
 
 //        bubbleSort();
 //        binarySearchTreeUsage();
@@ -25,9 +35,33 @@ public class Application {
 //        singleLinkedList();
     }
 
-    private static int[] generate() {
-        int[] array = new int[100];
+    private static int[] generate(int n) {
+        int[] array = new int[n];
         // for each element = random();
+        for (int i = 0; i < array.length; i++) {
+//            Random random = new Random();
+//            array[i] = random.nextInt(100);
+
+
+            int generated = (int) (n * Math.random());
+
+            // array: 2 5 7 X X
+            // index: 0 1 2 3 4: i = 3
+            // verif: 0 1 2 3 4 - j
+            int j = 0;
+            while (j < i) {
+                if (generated == array[j]) {
+                    j = 0;
+                    generated = (int) (n * Math.random());
+                } else { // solves the issue that j restarts from 0 and avoid j++
+                    j++;
+                }
+            }
+
+
+            array[i] = generated;
+        }
+
         return array;
     }
 
@@ -43,7 +77,7 @@ public class Application {
     }
 
     private static void printArray(int[] array) {
-        for(int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
         System.out.println();
