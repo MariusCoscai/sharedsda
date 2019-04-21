@@ -83,6 +83,34 @@ public class Sort {
         }
     }
 
-    
+    public static void quickSort(int[] array) {
+        quickSortRecursive(array, 0, array.length - 1);
+    }
+
+    private static void quickSortRecursive(int[] array, int start, int end) {
+        if (start < end) {
+            int indexPivot = partition(array, start, end);
+            quickSortRecursive(array, start, indexPivot - 1);
+            quickSortRecursive(array, indexPivot + 1, end);
+        }
+    }
+
+    private static int partition(int[] array, int start, int end) {
+        int pivot = array[end];
+        int i = start - 1; // pozitia elementelor mai mici decât pivot
+        for (int parcurge = start; parcurge < end; parcurge++) {
+            if (array[parcurge] <= pivot) {
+                i++;
+                int temp = array[i];
+                array[i] = array[parcurge];
+                array[parcurge] = temp;
+            }
+        }
+
+        int temp = array[i + 1];
+        array[i+1] = array[end];
+        array[end] = temp;
+        return i+1;
+    }
 
 }

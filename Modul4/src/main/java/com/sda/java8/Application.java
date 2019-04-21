@@ -15,7 +15,11 @@ public class Application {
         int[] myArray2 = {6, 5, 3, 1, 8, 7, 2, 4};
         int[] generated = generate(10);
 
+        Sort.quickSort(myArray);
+        printArray(myArray);
 
+        Sort.quickSort(myArray2);
+        printArray(myArray2);
 
 //        insertionSort();
 //        mergeSort();
