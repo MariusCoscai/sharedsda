@@ -13,16 +13,33 @@ public class Application {
     public static void main(String[] args) {
         int[] myArray = {2, 4, 3};
         int[] myArray2 = {6, 5, 3, 1, 8, 7, 2, 4};
+        int[] generated = generate(10);
 
-        Sort.insertionSort(myArray);
-        printArray(myArray);
 
+
+//        insertionSort();
 //        mergeSort();
-//        sortRandomNumbers();
 //        bubbleSort();
+
 //        binarySearchTreeUsage();
 //        doubleLinkedList();
 //        singleLinkedList();
+    }
+
+    private static void insertionSort() {
+        int[] myArray = {2, 4, 3};
+        int[] myArray2 = {6, 5, 3, 1, 8, 7, 2, 4};
+        int[] generated = generate(10);
+
+//        Sort.insertionSort(myArray);
+//        printArray(myArray);
+
+//        Sort.insertionSort(myArray2);
+//        printArray(myArray2);
+
+        printArray(generated);
+        Sort.insertionSort(generated);
+        printArray(generated);
     }
 
     private static void mergeSort() {
@@ -91,6 +108,9 @@ public class Application {
 
         printArray(myArray);
         printArray(myArray2);
+
+//        sortRandomNumbers();
+
     }
 
     private static void printArray(int[] array) {

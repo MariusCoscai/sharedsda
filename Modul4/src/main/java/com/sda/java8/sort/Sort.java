@@ -72,7 +72,17 @@ public class Sort {
     }
 
     public static void insertionSort(int[] array) {
-
+        for (int current = 1; current < array.length; current++) {
+            int value = array[current];
+            int previous = current - 1;
+            while (previous >= 0 && array[previous] > value) {
+                array[previous + 1] = array[previous];
+                previous--;
+            }
+            array[previous + 1] = value;
+        }
     }
+
+    
 
 }
