@@ -16,6 +16,21 @@ public class Sort {
         } while (executat);
     }
 
+    public static void bubbleSort(String[] array) {
+        boolean executat;
+        do {
+            executat = false;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i].compareTo(array[i + 1]) > 0) {
+                    String temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    executat = true;
+                }
+            }
+        } while (executat);
+    }
+
     public static void mergeSort(int[] array) {
         mergeSortRecursive(array, 0, array.length - 1);
     }
@@ -108,6 +123,36 @@ public class Sort {
         }
 
         int temp = array[i + 1];
+        array[i+1] = array[end];
+        array[end] = temp;
+        return i+1;
+    }
+
+    public static void quickSort(String[] array) {
+        quickSortRecursive(array, 0, array.length - 1);
+    }
+
+    private static void quickSortRecursive(String[] array, int start, int end) {
+        if (start < end) {
+            int indexPivot = partition(array, start, end);
+            quickSortRecursive(array, start, indexPivot - 1);
+            quickSortRecursive(array, indexPivot + 1, end);
+        }
+    }
+
+    private static int partition(String[] array, int start, int end) {
+        String pivot = array[end];
+        int i = start - 1; // pozitia elementelor mai mici decât pivot
+        for (int parcurge = start; parcurge < end; parcurge++) {
+            if (array[parcurge].compareTo(pivot) <= 0) {
+                i++;
+                String temp = array[i];
+                array[i] = array[parcurge];
+                array[parcurge] = temp;
+            }
+        }
+
+        String temp = array[i + 1];
         array[i+1] = array[end];
         array[end] = temp;
         return i+1;

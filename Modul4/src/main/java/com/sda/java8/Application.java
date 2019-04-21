@@ -11,9 +11,7 @@ import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
-
-        
-
+//        sortStrings();
 //        sortPerformanceTesting();
 //        quickSort();
 //        insertionSort();
@@ -23,6 +21,25 @@ public class Application {
 //        binarySearchTreeUsage();
 //        doubleLinkedList();
 //        singleLinkedList();
+    }
+
+    private static void sortStrings() {
+        // Update the sorting algorithm for bubble sort to support String[] sorting.
+        String[] myNames1 = {"Tudor", "Alexandru", "Edmond"};
+        String[] myNames2 = {"Tudor", "Alexandru", "Edmond", "Gabriel", "Marius", "Catalin",
+                "Diana", "Cosmin", "Razvan", "Mihai", "Iana", "Robert"};
+
+//        Sort.bubbleSort(myNames1);
+//        printArray(myNames1);
+//        Sort.bubbleSort(myNames2);
+//        printArray(myNames2);
+
+        Sort.quickSort(myNames1);
+        printArray(myNames1);
+        Sort.quickSort(myNames2);
+        printArray(myNames2);
+
+        // OzzieManReview
     }
 
     private static void sortPerformanceTesting() {
@@ -178,6 +195,13 @@ public class Application {
     }
 
     private static void printArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    private static void printArray(String[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
