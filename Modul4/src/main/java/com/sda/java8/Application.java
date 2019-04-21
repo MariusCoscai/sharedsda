@@ -11,19 +11,26 @@ import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
-
         int[] myArray = {2, 4, 3};
         int[] myArray2 = {6, 5, 3, 1, 8, 7, 2, 4};
 
-        Sort.mergeSort(myArray2);
+        Sort.insertionSort(myArray);
+        printArray(myArray);
 
-//        printArray(myArray);
-
+//        mergeSort();
 //        sortRandomNumbers();
 //        bubbleSort();
 //        binarySearchTreeUsage();
 //        doubleLinkedList();
 //        singleLinkedList();
+    }
+
+    private static void mergeSort() {
+        int[] myArray = {2, 4, 3};
+        int[] myArray2 = {6, 5, 3, 1, 8, 7, 2, 4};
+
+        Sort.mergeSort(myArray2);
+//        printArray(myArray);
     }
 
     private static void sortRandomNumbers() {
