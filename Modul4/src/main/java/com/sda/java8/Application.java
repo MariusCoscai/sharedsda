@@ -12,8 +12,24 @@ import java.util.Scanner;
 public class Application {
     public static void main(String[] args) {
 
+        
+
+//        sortPerformanceTesting();
+//        quickSort();
+//        insertionSort();
+//        mergeSort();
+//        bubbleSort();
+
+//        binarySearchTreeUsage();
+//        doubleLinkedList();
+//        singleLinkedList();
+    }
+
+    private static void sortPerformanceTesting() {
         // generam seturi de date de 10_000, 18_000, 20_000, 100_000 valori
-        int[] generated = generate(15000);
+        // Bonus: generateReversed() function and test
+//        int[] generated = generateRandom(15000);
+        int[] generated = generateReverse(15000);
         int[] arrayCopy = copyArray(generated);
 
         // salvam timpul curent
@@ -30,7 +46,6 @@ public class Application {
 
         System.out.println("Bubble: " + bubbleTime + " - QuickSort: " + quickSortTime);
 
-        // Bonus: generateReversed() function and test
 
         // Conclusions
         // 1. If the input number is small enough, the total time can be greatly influenced by other system processes
@@ -38,16 +53,6 @@ public class Application {
         // 2. If the input number is too high, the recursive calls reach the stack limit and cause StackOverFlow.
         // TODO: implement iterative quick sort (not recursive) to avoid stack overflow.
         // 3. Quick sort is faster than bubble sort, even in worst case reversed values.
-
-
-//        quickSort();
-//        insertionSort();
-//        mergeSort();
-//        bubbleSort();
-
-//        binarySearchTreeUsage();
-//        doubleLinkedList();
-//        singleLinkedList();
     }
 
     // create a copy of the generated set
@@ -55,7 +60,7 @@ public class Application {
     // * walk the original array and assign each value to the copy: copy[i] = original[i]
     private static int[] copyArray(int[] array) {
         int[] copy = new int[array.length];
-        for(int i = 0; i < copy.length; i++) {
+        for (int i = 0; i < copy.length; i++) {
             copy[i] = array[i]; // If we would have an object instead of a primitive we would say something like: new ObjectName(properties)
         }
         return copy;
@@ -64,7 +69,7 @@ public class Application {
     private static void quickSort() {
         int[] myArray = {20, 40, 30};
         int[] myArray2 = {6, 5, 3, 1, 8, 7, 2, 4};
-        int[] generated = generate(10);
+        int[] generated = generateRandom(10);
 
 //        Sort.quickSort(myArray);
 //        printArray(myArray);
@@ -80,7 +85,7 @@ public class Application {
     private static void insertionSort() {
         int[] myArray = {2, 4, 3};
         int[] myArray2 = {6, 5, 3, 1, 8, 7, 2, 4};
-        int[] generated = generate(10);
+        int[] generated = generateRandom(10);
 
 //        Sort.insertionSort(myArray);
 //        printArray(myArray);
@@ -113,14 +118,22 @@ public class Application {
         System.out.println("Introduceti numarul de elemente: ");
         int n = scanner.nextInt();
 
-        int[] myArray = generate(n);
+        int[] myArray = generateRandom(n);
         printArray(myArray);
 
         Sort.bubbleSort(myArray);
         printArray(myArray);
     }
 
-    private static int[] generate(int n) {
+    private static int[] generateReverse(int n) {
+        int[] array = new int[n];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = array.length - i;
+        }
+        return array;
+    }
+
+    private static int[] generateRandom(int n) {
         int[] array = new int[n];
         // for each element = random();
         for (int i = 0; i < array.length; i++) {
