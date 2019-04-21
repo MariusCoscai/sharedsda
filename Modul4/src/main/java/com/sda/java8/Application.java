@@ -11,16 +11,18 @@ import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
-        int[] myArray = {2, 4, 3};
-        int[] myArray2 = {6, 5, 3, 1, 8, 7, 2, 4};
+
         int[] generated = generate(10);
 
-        Sort.quickSort(myArray);
-        printArray(myArray);
+        // generam seturi de date de 100, 1000, 10000 valori
 
-        Sort.quickSort(myArray2);
-        printArray(myArray2);
+        // salvam timpul curent
+        // executam cod sortare bubble
+        // calculam timpul de executie: curent - anterior, si afisam
+        // similar pentru quick
 
+
+//        quickSort();
 //        insertionSort();
 //        mergeSort();
 //        bubbleSort();
@@ -28,6 +30,22 @@ public class Application {
 //        binarySearchTreeUsage();
 //        doubleLinkedList();
 //        singleLinkedList();
+    }
+
+    private static void quickSort() {
+        int[] myArray = {20, 40, 30};
+        int[] myArray2 = {6, 5, 3, 1, 8, 7, 2, 4};
+        int[] generated = generate(10);
+
+//        Sort.quickSort(myArray);
+//        printArray(myArray);
+
+//        Sort.quickSort(myArray2);
+//        printArray(myArray2);
+
+//        printArray(generated);
+//        Sort.quickSort(generated);
+//        printArray(generated);
     }
 
     private static void insertionSort() {
